@@ -20,12 +20,14 @@ class CategoryController extends Controller
 
     public function getCreateCategoryPage()
     {
-        $categories=$this->categoryRepository->getAllCategories();
+        $categories=$this->categoryRepository->getCategoriesTree();
+        return $categories;
     	return view('back/categories/create')->with('categories',$categories);
     }
 
     public function createNewCategory(Request $request)
     {
-        
+        $result=$this->categoryRepository->createNewCategory($request);
+        return $result;
     }
 }

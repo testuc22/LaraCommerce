@@ -40,8 +40,8 @@
                     </div>
                     <div class="form-group">
                       <label>Parent Category</label>
-                      <select class="form-control" name="category" required="true">
-                        <option value="" selected>Select Parent Category</option>
+                      <select class="form-control" name="parent_category">
+                        <option value="0" selected>Select Parent Category</option>
                         @foreach($categories as $category)
                           <option value="{{$category->id}}">{{$category->title}}</option>
                         @endforeach
@@ -54,7 +54,7 @@
                       @endcomponent
                     @endif
                       <label>Meta Title</label>
-                      <input type="text" class="form-control" placeholder="Category Name" name="meta_title" value="{{old('meta_title')}}" required="true">
+                      <input type="text" class="form-control" placeholder="Meta Title" name="meta_title" value="{{old('meta_title')}}" required="true">
                     </div>
                   <div class="form-group">
                       @if($errors->has('description'))
